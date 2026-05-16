@@ -1,0 +1,53 @@
+package Framework.testng1;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+public class End1C {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		String productName = "ZARA COAT 3";
+		String countryName="ind";
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		LandingPage landingPage = new LandingPage(driver);
+		landingPage.goTo();
+		ProductCatalogue productCatalogue=landingPage.logIn("thavithu15@gmail.com", "10011998Ad@");
+		
+		//List<WebElement> listproduct=prod.getProductList();
+		productCatalogue.addToCart(productName);
+		CartPage cartPage=productCatalogue.goToCart();
+		Boolean match=cartPage.checkProductInCart(productName);
+		Assert.assertTrue(match);
+		CheckoutPage checkoutPage=cartPage.goToCheckout();
+		checkoutPage.selectCountry(countryName);
+		confirmationPage confirmationPage=checkoutPage.placeOrder();
+		String confirmationMessage=confirmationPage.getConfirmMessage();
+		Assert.assertEquals(confirmationMessage, "Thankyou for the order.");
+		driver.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+
+	}
+
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="3" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-28T10:47:55 IST" name="Suite" finished-at="2026-04-28T10:47:55 IST" duration-ms="45">
+    <groups>
+    </groups>
+    <test started-at="2026-04-28T10:47:55 IST" name="Test" finished-at="2026-04-28T10:47:55 IST" duration-ms="45">
+      <class name="testng1.day1">
+        <test-method signature="demo()[pri:0, instance:testng1.day1@223d2c72]" started-at="2026-04-28T10:47:55 IST" name="demo" finished-at="2026-04-28T10:47:55 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- demo -->
+      </class> <!-- testng1.day1 -->
+      <class name="testng1.day2">
+        <test-method is-config="true" signature="homeLoan()[pri:0, instance:testng1.day2@692f203f]" started-at="2026-04-28T10:47:55 IST" name="homeLoan" finished-at="2026-04-28T10:47:55 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeLoan -->
+        <test-method signature="personalLoan()[pri:0, instance:testng1.day2@692f203f]" started-at="2026-04-28T10:47:55 IST" name="personalLoan" finished-at="2026-04-28T10:47:55 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- personalLoan -->
+      </class> <!-- testng1.day2 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

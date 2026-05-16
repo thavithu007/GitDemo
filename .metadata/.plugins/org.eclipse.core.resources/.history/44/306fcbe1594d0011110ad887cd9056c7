@@ -1,0 +1,23 @@
+package Framework.Amazon;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class ProductCatalogue {
+	WebDriver driver;
+
+	public ProductCatalogue(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(css="[data-action-type='DISMISS']")
+	WebElement addressToastDismiss;
+	
+	public void addressToastdismiss() {
+		addressToastDismiss.click();
+	}
+
+}

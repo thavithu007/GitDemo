@@ -1,0 +1,22 @@
+package Framework.amazontestcase;
+
+import org.testng.annotations.Test;
+
+import Framework.Amazon.ProductCatalogue;
+import Framework.Amazon.TestData;
+
+public class Addtocart extends TestData{
+	
+	
+	@Test
+	public void addCart() {
+		ProductCatalogue prod=landingPage.logIn("thavithuraja5992@gmail.com", "10011998Ad");
+		prod.addressToastdismiss();
+		
+		
+		
+		
+		
+	}
+
+}

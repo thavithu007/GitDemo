@@ -1,0 +1,23 @@
+package testng1;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class day2 {
+
+	@Test
+	public void personalLoan() {
+		System.out.println("This is for personal loan");
+		
+
+	}
+	@BeforeTest
+	public void homeLoan() {
+		System.out.println("This is for Home loan");
+	}
+	@Test
+	public void carLoan(){
+		System.out.println("This is for Car Loan");
+	}
+
+}

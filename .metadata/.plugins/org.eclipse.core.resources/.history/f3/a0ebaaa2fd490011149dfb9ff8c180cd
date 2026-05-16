@@ -1,0 +1,24 @@
+package Framework.testng1.errorvalidation;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Framework.testng1.testcomponent.TestData;
+
+public class ErrorValidation extends TestData {
+	
+	@Test
+	public void logInError()
+	{
+	
+	landingPage.logIn("thavithwwu16@gmail.com", "10011998Ad@");
+	String error=landingPage.getErrorMessage();
+	Assert.assertEquals(error,"Incorrect email or password." );
+		
+	}
+	
+
+}

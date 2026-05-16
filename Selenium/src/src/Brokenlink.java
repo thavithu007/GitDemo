@@ -1,0 +1,44 @@
+package src;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.asserts.SoftAssert;
+
+
+public class Brokenlink {
+
+	public static void main(String[] args) throws IOException, IOException, URISyntaxException {
+		// TODO Auto-generated method stub
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		WebElement footer=driver.findElement(By.cssSelector("div.footer_top_agile_w3ls"));
+		List<WebElement> links=footer.findElements(By.cssSelector("li.gf-li a"));
+		SoftAssert a=new SoftAssert();
+		for(WebElement link: links) {
+			String url=link.getAttribute("href");
+			HttpURLConnection conn=(HttpURLConnection)new URI(url).toURL().openConnection();
+			conn.setRequestMethod("HEAD");
+			conn.connect();
+			int respCode=conn.getResponseCode();
+			a.assertTrue(respCode<400, "This is a broken link -" +link.getText()+" with response code" + respCode )	;		
+			
+		}
+		a.assertAll();
+		
+	
+		
+
+	}
+
+}

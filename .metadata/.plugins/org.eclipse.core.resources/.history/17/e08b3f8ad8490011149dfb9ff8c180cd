@@ -1,0 +1,11 @@
+package Framework.testng1.testcomponent;
+
+import org.testng.ITestListener;
+
+public class Listeners implements ITestListener {
+	
+	
+	
+	
+
+}

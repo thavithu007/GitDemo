@@ -1,0 +1,5 @@
+package Framework.testng1.Globalproperties;
+
+public class ExtentReporterNG {
+
+}
