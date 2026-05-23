@@ -13,7 +13,7 @@ public class ReporterNG {
 		ExtentReports extent=new ExtentReports();
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Tester", "Thavithu");
-		return null;
+		return extent;
 		
 	}
 	
