@@ -58,6 +58,13 @@ public class AbstractComponents {
 		
 		
 	}
+	public OrderPage goToOrder2() {
+		orderHeader.click();
+		OrderPage orderPage=new OrderPage(driver);
+		return orderPage;
+		
+		
+	}
 	
 
 }
